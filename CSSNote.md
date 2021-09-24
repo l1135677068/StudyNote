@@ -56,7 +56,27 @@
 
 #### Grid布局
 
+使用display:grid表明网格布局
+
+容器： 可以规定行，列(grid-template-row(column)), 可以划分区域grid-template-area
+
+Justify(align)-content标明内容区域在容器内的水平(垂直)位置,简写为place-content
+
+项目:
+
+规定属于哪个格子 grid-row(column): start/end
+
+Grid-area规定属于哪个区域 
+
+Place-self是align-self和justify-self的简写
+
 #### Flex布局
+
+设置display为flex
+
+容器：flex-direction, flex-wrap, justify-content, align-item(在交叉轴的对齐方式),
+
+项目:order, flex-grow, flex-shrink, flex-basis,flex(前三者的简写).
 
 
 

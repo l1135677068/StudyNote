@@ -1,5 +1,7 @@
 [toc]
 
+## hook
+
 ### 背景
 
 1 无法复用状态逻辑
@@ -39,4 +41,18 @@ return console.log("2")
 #### 优化
 
 可以在useEffect(()=>{}, para)指定para的值，如果该值没有变化那么次useEffect()便不会执行。
+
+### 参考
+
+[hook使用](https://zh-hans.reactjs.org/docs/hooks-effect.html)
+
+## ref
+
+### 背景
+
+通过ref可以获得元素的引用或者组件实例的引用
+
+### 方法
+
+1 创建ref。2 元素或者组件设置对应的ref属性 3 通过ref.current获得引用
 
