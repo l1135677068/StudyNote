@@ -88,7 +88,7 @@ Place-self是align-self和justify-self的简写
 
 ### 基础知识
 
-#### 块内元素和行内元素的区别
+#### 块内元素和行内元素的区别以及行内块元素
 
 ​	1 块内元素占一行，垂直排列；行内元素不占一行，水平排列
 
@@ -99,6 +99,8 @@ Place-self是align-self和justify-self的简写
 ​	4常用的块内元素有 p, h, div,ul, li
 
 ​	5常用的行内元素有a img span input span
+
+​	6行内块元素在一行显示，可以设置宽高，比如input和img
 
 #### em和rem
 
