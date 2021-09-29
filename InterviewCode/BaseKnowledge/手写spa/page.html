@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <a href="#/about">about</a>
+        <a href="#/">home</a>
+        <a href="#/topic">topic</a>
+        <div id="container"></div>
+        <script src="router.js"></script>
+        <script>
+            var box = document.getElementById('container');
+            const obj = new Router();
+            obj.init();
+            // 添加回调事件
+            obj.router('/', function () {
+                box.innerText = "home"
+            });
+            obj.router('/about', function () {
+                box.innerText = "about"
+            });
+            obj.router('/topic', function () {
+                box.innerText = "topic"
+                })
+        </script>
+</body>
+</html>

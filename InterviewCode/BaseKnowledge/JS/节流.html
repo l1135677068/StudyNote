@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>节流 在一段时间内连续触发某个事件，变为每隔一段固定时间触发</p>
+    <script>
+        // 在一段时间内，多次触发同一个事件，只执行最后一次事件触发的代码
+        // 复用性不强 使用闭包解决复用性
+       var timer;
+       function debouce(fn, delay) {
+           if (timer) {
+                return
+        }
+           timer = setTimeout(function () {
+               fn();
+               timer = null;
+           }, delay);
+       }
+       //  name = "fksd;l";
+       //  var ob = {
+       //      name: 'mike',
+       //      fun: debouce,
+       //  }
+       //  function debouce(fn, delay) {
+       //      var timer;
+       //      var thisDebouce = this;
+       //      return function () {
+       //          // 获得调用debouce的对象
+       //          var _this = thisDebouce
+       //          var args = arguments;
+       //          if (timer) {
+       //              return;
+       //          }
+       //          timer = setTimeout(function () {
+       //              // 改变this指向，使得调用变为a.fn(), 使用apply还可以传递参数
+       //              fn.apply(_this, args);
+       //              timer = null;
+       //          }, delay);
+       //      };
+       //  }
+        function print(content) {
+            console.log("content");
+        }
+        // 获得闭包
+        // var testDebouce = ob.fun(print, 1000);
+        // var testDebouce = debouce(print, 1000);
+        window.onmousemove = () => {
+            debouce(print, 1000); // 给防抖函数传参
+        }
+    </script>
+</body>
+</html>
