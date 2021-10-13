@@ -10,7 +10,7 @@
         // 在一段时间内，多次触发同一个事件，只执行最后一次事件触发的代码
         // 复用性不强 使用闭包解决复用性
        var timer;
-       function debouce(fn, delay) {
+       function throttle(fn, delay) {
            if (timer) {
                 return
         }
@@ -22,14 +22,14 @@
        //  name = "fksd;l";
        //  var ob = {
        //      name: 'mike',
-       //      fun: debouce,
+       //      fun: throttle,
        //  }
-       //  function debouce(fn, delay) {
+       //  function throttle(fn, delay) {
        //      var timer;
-       //      var thisDebouce = this;
+       //      var thisthrottle = this;
        //      return function () {
-       //          // 获得调用debouce的对象
-       //          var _this = thisDebouce
+       //          // 获得调用throttle的对象
+       //          var _this = thisthrottle
        //          var args = arguments;
        //          if (timer) {
        //              return;
@@ -45,10 +45,10 @@
             console.log("content");
         }
         // 获得闭包
-        // var testDebouce = ob.fun(print, 1000);
-        // var testDebouce = debouce(print, 1000);
+        // var testthrottle = ob.fun(print, 1000);
+        // var testthrottle = throttle(print, 1000);
         window.onmousemove = () => {
-            debouce(print, 1000); // 给防抖函数传参
+            throttle(print, 1000); // 给防抖函数传参
         }
     </script>
 </body>
