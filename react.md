@@ -1,5 +1,9 @@
 [toc]
 
+### super的作用
+
+子类没有this，super就是用来继承父类的this的
+
 ## 如何快速获得更新了的state
 
 如果按照abc都对state修改且加一，state初始为0，传递对象的话abc读取的state都为0;
@@ -9,6 +13,18 @@
 在setstate中传递一个函数而不是对象，传递函数的话可以保证当前获取的state是基于前一个时刻改变了后的state，
 
 如果传递对象的话，查询到的均是渲染前的state，而不是
+
+## setState
+
+1 批量更新 16以前，只有在react事件处理器内部才默认批量，17及以后均批量更新
+
+2 对于相同的state的key，只保留最近的那个
+
+3 按调用setState的顺序更新state
+
+4 异步的
+
+5 [参考](https://stackoverflow.com/questions/48563650/does-react-keep-the-order-for-state-updates/48610973#48610973)
 
 ## hook
 
