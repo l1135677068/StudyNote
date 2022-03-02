@@ -4,11 +4,13 @@
 
 #### 数据类型
 
-##### 基本数据类型 Number String Boolean Undefined Null
+##### 基本数据类型 Number String Boolean Undefined Null Bigint Symbol
 
 ​	String可以用""或者''定义，c++中""定义字符串''定义字符
 
 ​	字符串中的常用方法: concat()拼接字符串 substring() indexof() 返回子串的位置 match() 匹配正则表达式
+
+NSBUSNB
 
 ##### Object(Array, Function)
 
@@ -30,24 +32,17 @@
 
 ### 基础知识
 
+#### 闭包
+
+是一个可以访问其他函数作用域内变量的函数，
+
 #### new的过程
 
-```js
-function CreateObj(){
-  this.name = "极客时间"
-}
-var myObj = new CreateObj()
-```
-
-可以这样理解
-
-```js
-var tempObj = {}
-CreateObj.call(tempObj)
-return tempObj
-```
-
-
+1. 创建空对象
+2. 新对象的__proto__属性指向函数的原型对象
+3. this指向新对象
+4. 执行构造函数的新代码
+5. 返回新对象
 
 #### 执行上下文
 
@@ -73,13 +68,13 @@ Try{可能发生错误的地方,可以通过throw主动抛出错误}catch(){当�
 
 #### 原型链和原型对象
 
-js在创建每个函数的时候都会默认创建一个该函数的原型对象，prototype属性存储着指向原型对象的指针，而原型对象存储着实例共享的属性或者方法，可以被继承。一般来说，实例拥有指向原型对象的指针__proto__，原型对象拥有指向构造函数的指针, constrctor。
+js在创建每个**函数**的时候都会默认创建一个该函数的原型对象，prototype属性存储着指向原型对象的指针，而原型对象存储着实例共享的属性或者方法，可以被继承。一般来说，实例拥有指向原型对象的指针__proto__，原型对象拥有指向构造函数的指针, constrctor。
 
 原型链就是实例所指向的原型对象为另一个类型的实例，这样可以递归下去。
 
 #### JS继承
 
-6种方式: 原型链继承(**使用prototype指向另一个实例**)，原型式继承(object.create)，寄生式继承，寄生组合继承(object + 构造函数)，组合继承(**原型链+构造函数)**，借用构造函数继承(**子函数中调用父类的构造函数.call()**)。
+6种方式: 原型链继承(**使用prototype指向另一个实例**);原型式继承(object.create)，寄生式继承，寄生组合继承(object + 构造函数)，组合继承(**原型链+构造函数)**，借用构造函数继承(**子函数中调用父类的构造函数.call()**)。
 
 #### apply() call() bind()方法
 
